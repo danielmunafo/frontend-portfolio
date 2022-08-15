@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "moduleResolution": "Node",
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "module": "ES2022",
+    "target": "ES2022",
+    "allowJs": true,
+    "jsx": "react-jsx"
+  },
+  "files": [
+    "src/index.tsx"
+  ]
+}
