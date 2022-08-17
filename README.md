@@ -1,15 +1,37 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Welcome MY new awesome project!
 
-This project has been created using **webpack-cli**, you can now run
+## Frontend Portfolio
+Aims to show my experience regarding software engineering skills with frontend focus
 
+### Technologies
+- React
+- Jest
+- React Testing Library
+- Cypress
+- Webpack
+- SCSS
+- eslint
+- Typescript
+- Client Side rendering
+- PWA
+
+### Dev Dependencies
+`yarn`
+
+`node` >= 18
+
+### Getting started
 ```
-npm run build
+yarn
 ```
-
-or
-
 ```
-yarn build
+yarn test
 ```
-
-to bundle your application
+```
+yarn dev
+```
+```
+http://localhost:8080
+```
+### Scripts
+Check available scripts in `package.json`
