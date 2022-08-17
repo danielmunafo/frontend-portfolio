@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@test-utils": [
+        "src/test-utils/index.tsx"
+      ]
+    },
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "moduleResolution": "node",
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "module": "ES2022",
+    "target": "ES2022",
+    "allowJs": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ],
+  "files": [
+    "src/index.tsx"
+  ]
+}
