@@ -16,7 +16,6 @@ const config = {
     publicPath: "/",
     clean: true,
   },
-  devtool: 'inline-source-map',
   devServer: {
     open: true,
     host: "localhost",
@@ -84,10 +83,9 @@ module.exports = () => {
     config.mode = "production";
 
     config.plugins.push(new MiniCssExtractPlugin());
-
-    config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
   } else {
     config.mode = "development";
+    config.devtool = "inline-source-map"
 
     if (analyseBundle) config.plugins.push(new BundleAnalyzerPlugin())
   }
