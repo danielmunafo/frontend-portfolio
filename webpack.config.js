@@ -13,6 +13,8 @@ const config = {
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
+    clean: true,
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -21,14 +23,20 @@ const config = {
     static: [
       { directory: path.resolve(__dirname, "dist") },
       { directory: path.resolve(__dirname, "public") },
-    ]
+    ],
+    proxy: {
+      '/public/*': {
+        target: 'http://localhost:8080/',
+        pathRewrite: { '^/public': '' },
+      },
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       filename: "index.html",
       inject: true,
-      favicon: "./public/favicon.ico",
+      favicon: "./public/icons/favicon.ico",
       manifest: "./public/manifest.json",
     }),
 
