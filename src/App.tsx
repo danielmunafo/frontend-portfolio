@@ -6,10 +6,11 @@ import { CssBaseline } from '@mui/material';
 
 import './App.scss'
 
+export const COMPONENT_ID = 'app'
 const App: FC = () => {
   return <Router>
     <CssBaseline />
-    <div>hello worldo</div>
+    <div data-testid={COMPONENT_ID}>hello worldo</div>
   </Router>
 }
 
