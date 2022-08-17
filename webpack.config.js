@@ -39,9 +39,13 @@ const config = {
       favicon: "./public/icons/favicon.ico",
       manifest: "./public/manifest.json",
     }),
-
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    new WorkboxWebpackPlugin.GenerateSW({
+      // these options encourage the ServiceWorkers to get in there fast
+      // and not allow any straggling "old" SWs to hang around
+      maximumFileSizeToCacheInBytes: 50000000,
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
   ],
   module: {
     rules: [
