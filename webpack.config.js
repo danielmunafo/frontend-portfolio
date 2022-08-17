@@ -4,8 +4,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isProduction = process.env.NODE_ENV == "production";
+const analyseBundle = process.env.ANALYSE_BUNDLE == "true";
 
 const config = {
   entry: "./src/index.tsx",
@@ -74,6 +76,8 @@ module.exports = () => {
     config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
   } else {
     config.mode = "development";
+
+    if (analyseBundle) config.plugins.push(new BundleAnalyzerPlugin())
   }
   return config;
 };
